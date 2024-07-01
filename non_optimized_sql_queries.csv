@@ -1,0 +1,5 @@
+SELECT * FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE o.order_date > '2022-01-01';
+SELECT * FROM products p WHERE EXISTS (SELECT 1 FROM order_items oi WHERE oi.product_id = p.id);
+SELECT * FROM users WHERE id IN (SELECT user_id FROM orders WHERE total > 100);
+SELECT * FROM employees e JOIN departments d ON e.department_id = d.id WHERE d.name = 'Sales';
+SELECT * FROM users u, orders o WHERE u.id = o.user_id AND o.total > 100;
